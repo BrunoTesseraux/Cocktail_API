@@ -1,0 +1,19 @@
+.dark-mode {
+  background-color: #000000;
+  color: white;
+  .searchbar {
+    border: 2px solid yellow;
+  }
+  article {
+    background: linear-gradient(-135deg, #020f1c, #a0c1e7);
+  }
+}
+.light-mode {
+  background-color: rgb(194, 210, 214);
+  .searchbar {
+    border: 2px solid blue;
+  }
+  article {
+    background: linear-gradient(-135deg, #fec20b, #fedab7);
+  }
+}
