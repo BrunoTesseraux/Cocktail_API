@@ -2,7 +2,7 @@ import CocktailListItem from "../CocktailListItem/CocktailListItem";
 import { useContext } from "react";
 import { GinContext } from "../Context/Context";
 
-const CocktailList = () => {
+const GinCocktailList = () => {
   const style = () => {
     const polaroids = document.querySelectorAll(".polaroid");
 
@@ -25,21 +25,30 @@ const CocktailList = () => {
   };
 
 const ginCocktailContext = useContext(GinContext)
-console.log("yusuf: ", ginCocktailContext)
-const ginCocktailsList = ginCocktailContext.ginCocktailsList
 
   return (
     <section>
-    {ginCocktailContext.ginCocktailsList.map((cock, index) => (
-      <CocktailListItem
-        key={index}
-        name={cock.strDrink}
-        img={cock.strDrinkThumb}
-      />
-    ))}
+        {ginCocktailContext.ginCocktailsList.map((cockArray, index) => (
+    <div key={index}>
+      {cockArray.map((cock, subIndex) => (
+        <CocktailListItem
+          key={subIndex}
+          id={cock.idDrink}
+          name={cock.strDrink}
+          img={cock.strDrinkThumb}
+        /> 
+      ))}
+    </div>
+  ))}
+
+
+
+
+
+
   </section>
 );
 };
 
 
-export default CocktailList;
+export default GinCocktailList;
