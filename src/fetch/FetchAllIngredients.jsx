@@ -23,21 +23,6 @@ const FetchAllIngredients = () => {
             });
     }, []);
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
-    if (error) {
-        return <div>Error: {error.message}</div>;
-    }
-
-    return (
-        <section>
-            {getData?.map((cock, index) => (
-                <div key={index}>{cock.strIngredient1}</div>
-            ))}
-        </section>
-    );
 }
 
 export default FetchAllIngredients;
