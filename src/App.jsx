@@ -8,7 +8,7 @@ import CocktailDetails from "./components/CocktailDetails/CocktailDetails";
 import TestList from "./components/TestList"; //NUR ZUM TESTEN
 import { useState } from "react";
 
-// useContext: Gin, Vodka, Rum, Alkoholfrei
+// useContext: Gin, Vodka, Rum, Alkoholfrei;
 import {
   AlcFreeContext,
   GinContext,
@@ -35,48 +35,55 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <GinContext.Provider value={{ginCocktailsList, setGinCocktailsList}}>
-        <VodkaContext.Provider value={{vodkaCocktailsList, setVodkaCocktailsList}}>
-          <RumContext.Provider value={{rumCocktailsList, setRumCocktailsList}}>
-            <AlcFreeContext.Provider value={{alcFreeCocktailsList, setAlcFreeCocktailsList}}>
-              <RandomCocktailContext.Provider value={{randomCocktail, setRandomCocktail}}>
+        <GinContext.Provider value={{ ginCocktailsList, setGinCocktailsList }}>
+          <VodkaContext.Provider
+            value={{ vodkaCocktailsList, setVodkaCocktailsList }}
+          >
+            <RumContext.Provider
+              value={{ rumCocktailsList, setRumCocktailsList }}
+            >
+              <AlcFreeContext.Provider
+                value={{ alcFreeCocktailsList, setAlcFreeCocktailsList }}
+              >
+                <RandomCocktailContext.Provider
+                  value={{ randomCocktail, setRandomCocktail }}
+                >
+                  {/* Fetch Components Gin, Vodka, Rum, Alkoholfrei, Random */}
+                  <FetchGinList />
+                  <FetchVodkaList />
+                  <FetchRumList />
+                  <FetchAlcFreeList />
+                  <FetchRandomList />
+                  <Header />
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    {/* Gin */}
+                    <Route path="/gin" element={<GinCocktailList />} />
 
-              {/* Fetch Components Gin, Vodka, Rum, Alkoholfrei, Random */}
-              <FetchGinList/>
-              <FetchVodkaList />
-              <FetchRumList />
-              <FetchAlcFreeList />
-              <FetchRandomList />
-              <Header />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                {/* Gin */}
-                <Route path="/gin" element={<GinCocktailList />} />
+                    {/* Vodka */}
+                    {/* <Route path="/vodka" element={<VodkaCocktailList />} /> */}
 
-                {/* Vodka */}
-                <Route path="/vodka" element={<VodkaCocktailList />} />
+                    {/* Rum */}
+                    {/* <Route path="/rum" element={<RumCocktailList />} /> */}
 
-                {/* Rum */}
-                <Route path="/rum" element={<RumCocktailList />} />
+                    {/* Alkoholfrei */}
+                    <Route path="/alcfree" element={<AlcFreeCocktailList />} />
 
-                {/* Alkoholfrei */}
-                <Route path="/alcfree" element={<AlcFreeCocktailList />} />
+                    {/* Random */}
+                    {/* <Route path="/random" element={<RandomCocktailList />} /> */}
 
-                {/* Random */}
-                <Route path="/random" element={<RandomCocktailList />} />
+                    {/* Cocktaildetails */}
+                    <Route path="/cocktail/:id" element={<CocktailDetails />} />
 
-                {/* Cocktaildetails */}
-                <Route path="/cocktail/:id" element={<CocktailDetails />} />
-
-                {/* NUR ZUM TESTEN */}
-                <Route path="/test-cocktail/:name" element={<TestList />} /> 
-              </Routes>
-              <Footer />
-              </RandomCocktailContext.Provider>
-            </AlcFreeContext.Provider>
-          </RumContext.Provider>
-        </VodkaContext.Provider>
-      </GinContext.Provider>
+                    {/* NUR ZUM TESTEN */}
+                    <Route path="/test-cocktail/:name" element={<TestList />} />
+                  </Routes>
+                  <Footer />
+                </RandomCocktailContext.Provider>
+              </AlcFreeContext.Provider>
+            </RumContext.Provider>
+          </VodkaContext.Provider>
+        </GinContext.Provider>
       </BrowserRouter>
     </>
   );
