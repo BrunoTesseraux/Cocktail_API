@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AlcFreeContext } from "../components/Context/Context";
 
-
 const FetchAlcFreeList = () => {
     
     const alcFreeCocktailsState = useContext(AlcFreeContext);
@@ -9,7 +8,7 @@ const FetchAlcFreeList = () => {
     const alcFreeCocktailsList = alcFreeCocktailsState.alcFreeCocktailsList;
     
     // Konsolen-Ausgabe
-    console.log("%c AlcFree: ", "background-color: green", alcFreeCocktailsList);
+    // console.log("%c AlcFree: ", "background-color: green", alcFreeCocktailsList);
     
     const [getData, setData] = useState([]);
     const [loading, setLoading] = useState(true);

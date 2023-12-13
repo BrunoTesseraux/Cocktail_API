@@ -1,5 +1,7 @@
 import "./CocktailDetails.scss";
+
 const CocktailDetails = () => {
+
   return (
     <>
       <div class="card">

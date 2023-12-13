@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { VodkaContext } from "../components/Context/Context";
 
-
 const FetchVodkaList = () => {
     
     const vodkaCocktailsState = useContext(VodkaContext);
@@ -9,7 +8,7 @@ const FetchVodkaList = () => {
     const vodkaCocktailsList = vodkaCocktailsState.vodkaCocktailsList;
 
     // Konsolen-Ausgabe
-    console.log("%c Vodka: ", "background-color: blue", vodkaCocktailsList);
+    // console.log("%c Vodka: ", "background-color: blue", vodkaCocktailsList);
     
     const [getData, setData] = useState([]);
     const [loading, setLoading] = useState(true);

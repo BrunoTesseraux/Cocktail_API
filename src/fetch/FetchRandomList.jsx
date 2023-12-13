@@ -11,7 +11,7 @@ const FetchRandomList = () => {
     const randomCocktail = randomCocktailState.randomCocktail;
 
     // Konsolen-Ausgabe
-    console.log("%c Random: ", "background-color: yellow; color: black", randomCocktail);
+    // console.log("%c Random: ", "background-color: yellow; color: black", randomCocktail);
 
     useEffect(() => {
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)

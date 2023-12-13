@@ -9,7 +9,7 @@ const FetchGinList = () => {
     const ginCocktailsList = ginCocktailsState.ginCocktailsList;
 
     // Konsolen-Ausgabe
-    console.log("%c Gin: ", "background-color: lightgrey; color: black", ginCocktailsList);
+    // console.log("%c Gin: ", "background-color: lightgrey; color: black", ginCocktailsList);
     
     const [getData, setData] = useState([]);
     const [loading, setLoading] = useState(true);
