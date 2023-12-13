@@ -5,6 +5,7 @@ import Footer from "./components/footer/footer";
 import Home from "./page/Home";
 import CocktailList from "./components/CocktailList/CocktailList";
 import CocktailDetails from "./components/CocktailDetails/CocktailDetails";
+import TestList from "./components/TestList"; //NUR ZUM TESTEN
 import FetchByName from "./fetch/FetchByName";
 import FetchById from "./fetch/FetchById";
 import FetchByIngredient from "./fetch/FetchByIngredient";
@@ -26,6 +27,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/cocktails" element={<CocktailList />} />
           <Route path="/cocktail/:id" element={<CocktailDetails />} />
+          {/* NUR ZUM TESTEN */}
+          <Route path="/test-cocktail/:name" element={<TestList />} /> 
         </Routes>
         <Footer />
       </BrowserRouter>
