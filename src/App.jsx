@@ -9,7 +9,13 @@ import TestList from "./components/TestList"; //NUR ZUM TESTEN
 import { useState } from "react";
 
 // useContext: Gin, Vodka, Rum, Alkoholfrei
-import { AlcFreeContext, GinContext, RandomCocktailContext, RumContext, VodkaContext } from "./components/Context/Context";
+import {
+  AlcFreeContext,
+  GinContext,
+  RandomCocktailContext,
+  RumContext,
+  VodkaContext,
+} from "./components/Context/Context";
 
 import FetchGinList from "./fetch/FetchGinList";
 import FetchVodkaList from "./fetch/FetchVodkaList";
@@ -18,7 +24,6 @@ import FetchAlcFreeList from "./fetch/FetchAlcFreeList";
 import FetchRandomList from "./fetch/FetchRandomList";
 
 function App() {
-
   // useState() für Gin, Vodka, Rum, Alkoholfrei, Random
   const [ginCocktailsList, setGinCocktailsList] = useState([]);
   const [vodkaCocktailsList, setVodkaCocktailsList] = useState([]);
