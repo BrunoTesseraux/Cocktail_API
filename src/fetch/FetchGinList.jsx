@@ -1,6 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { GinContext } from "../components/Context/Context";
+
 
 const FetchByIngredient = () => {
+    
+    // importieren context
+    const ginCocktailsState = useContext(GinContext);
+    const setGinCocktailsList = ginCocktailsState.setGinCocktailsList;
+    const ginCocktailsList = ginCocktailsState.ginCocktailsList;
+
+    console.log(ginCocktailsList);
+    
     const [getData, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -14,7 +24,7 @@ const FetchByIngredient = () => {
                 return response.json();
             })
             .then(data => {
-                setData(data.drinks);
+                setData(setGinCocktailsList([...ginCocktailsList, data.drinks]));
                 setLoading(false);
             })
             .catch(error => {
@@ -22,22 +32,6 @@ const FetchByIngredient = () => {
                 setLoading(false);
             });
     }, []);
-
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
-    if (error) {
-        return <div>Error: {error.message}</div>;
-    }
-
-    return (
-        <section>
-            {getData?.map((cock, index) => (
-                <div key={index}>{cock.strDrink}</div>
-            ))}
-        </section>
-    );
 }
 
 export default FetchByIngredient;

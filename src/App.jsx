@@ -6,23 +6,20 @@ import Home from "./page/Home";
 import CocktailList from "./components/CocktailList/CocktailList";
 import CocktailDetails from "./components/CocktailDetails/CocktailDetails";
 import TestList from "./components/TestList"; //NUR ZUM TESTEN
-import FetchByName from "./fetch/FetchByName";
-import FetchById from "./fetch/FetchById";
-import FetchByIngredient from "./fetch/FetchByIngredient";
-import FetchAllIngredients from "./fetch/FetchAllIngredients";
-import FetchRandom from "./fetch/FetchRandom";
-
+import { useState } from "react";
+import { GinContext } from "./components/Context/Context";
+import FetchByIngredient from "./fetch/FetchGinList"; 
 
 function App() {
+
+  const [ginCocktailsList, setGinCocktailsList] = useState([]);
+
   return (
     <>
       <BrowserRouter>
+      <GinContext.Provider value={{ginCocktailsList, setGinCocktailsList}}>
+        <FetchByIngredient/>
         <Header />
-          <FetchByName/>
-          <FetchById/>
-          <FetchByIngredient/>
-          <FetchAllIngredients/>
-          <FetchRandom/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cocktails" element={<CocktailList />} />
@@ -31,6 +28,7 @@ function App() {
           <Route path="/test-cocktail/:name" element={<TestList />} /> 
         </Routes>
         <Footer />
+      </GinContext.Provider>
       </BrowserRouter>
     </>
   );
