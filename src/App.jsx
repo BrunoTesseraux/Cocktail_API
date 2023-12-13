@@ -5,11 +5,11 @@ import Footer from "./components/footer/footer";
 import Home from "./page/Home";
 import CocktailList from "./components/CocktailList/CocktailList";
 import CocktailDetails from "./components/CocktailDetails/CocktailDetails";
-import Fetch from "./page/Fetch";
-import Fetch2 from "./page/Fetch2";
-import Fetch3 from "./page/Fetch3";
-import Fetch4 from "./page/Fetch4";
-import Fetch5 from "./page/Fetch5";
+import FetchByName from "./fetch/FetchByName";
+import FetchById from "./fetch/FetchById";
+import FetchByIngredient from "./fetch/FetchByIngredient";
+import FetchAllIngredients from "./fetch/FetchAllIngredients";
+import FetchRandom from "./fetch/FetchRandom";
 
 
 function App() {
@@ -17,11 +17,11 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-          <Fetch/>
-          <Fetch2/>
-          <Fetch3/>
-          <Fetch4/>
-          <Fetch5/>
+          <FetchByName/>
+          <FetchById/>
+          <FetchByIngredient/>
+          <FetchAllIngredients/>
+          <FetchRandom/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cocktails" element={<CocktailList />} />

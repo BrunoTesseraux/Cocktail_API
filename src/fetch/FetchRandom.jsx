@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-const Fetch = () => {
+const FetchRandom = () => {
     const [getData, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-// by name
+
     useEffect(() => {
-        fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`)
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -40,4 +40,4 @@ const Fetch = () => {
     );
 }
 
-export default Fetch;
+export default FetchRandom;

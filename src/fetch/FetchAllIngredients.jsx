@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-const Fetch3 = () => {
+const FetchAllIngredients = () => {
     const [getData, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-// by ingredient
+// by List the categories, glasses, ingredients or alcoholic filters
     useEffect(() => {
-        fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin`)
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -34,10 +34,10 @@ const Fetch3 = () => {
     return (
         <section>
             {getData?.map((cock, index) => (
-                <div key={index}>{cock.strDrink}</div>
+                <div key={index}>{cock.strIngredient1}</div>
             ))}
         </section>
     );
 }
 
-export default Fetch3;
+export default FetchAllIngredients;
