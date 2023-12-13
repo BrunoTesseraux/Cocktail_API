@@ -1,15 +1,15 @@
 import { useContext, useEffect, useState } from "react";
-import { GinContext } from "../components/Context/Context";
+import { VodkaContext } from "../components/Context/Context";
 
 
-const FetchGinList = () => {
+const FetchVodkaList = () => {
     
-    const ginCocktailsState = useContext(GinContext);
-    const setGinCocktailsList = ginCocktailsState.setGinCocktailsList;
-    const ginCocktailsList = ginCocktailsState.ginCocktailsList;
+    const vodkaCocktailsState = useContext(VodkaContext);
+    const setVodkaCocktailsList = vodkaCocktailsState.setVodkaCocktailsList;
+    const vodkaCocktailsList = vodkaCocktailsState.vodkaCocktailsList;
 
     // Konsolen-Ausgabe
-    console.log("%c Gin: ", "background-color: lightgrey; color: black", ginCocktailsList);
+    console.log("%c Vodka: ", "background-color: blue", vodkaCocktailsList);
     
     const [getData, setData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -17,7 +17,7 @@ const FetchGinList = () => {
 
     // Fetch Vodka
     useEffect(() => {
-        fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin`)
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -25,7 +25,7 @@ const FetchGinList = () => {
                 return response.json();
             })
             .then(data => {
-                setData(setGinCocktailsList([...ginCocktailsList, data.drinks]));
+                setData(setVodkaCocktailsList([...vodkaCocktailsList, data.drinks]));
                 setLoading(false);
             })
             .catch(error => {
@@ -35,4 +35,4 @@ const FetchGinList = () => {
     }, []);
 }
 
-export default FetchGinList;
+export default FetchVodkaList;
