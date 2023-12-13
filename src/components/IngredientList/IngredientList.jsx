@@ -1,3 +1,5 @@
+import IngredientItem from "../IngredientItem/IngredientItem";
+
 const IngredientList = () => {
   return <></>;
 };
