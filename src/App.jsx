@@ -8,10 +8,6 @@ import CocktailDetails from "./components/CocktailDetails/CocktailDetails";
 import TestList from "./components/TestList"; //NUR ZUM TESTEN
 import { useState } from "react";
 
-
-import { GinContext } from "./components/Context/Context";
-import FetchGinList from "./fetch/FetchGinList"; 
-
 import {
   AlcFreeContext,
   GinContext,
