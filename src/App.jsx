@@ -22,6 +22,7 @@ import FetchVodkaList from "./fetch/FetchVodkaList";
 import FetchRumList from "./fetch/FetchRumList";
 import FetchAlcFreeList from "./fetch/FetchAlcFreeList";
 import FetchRandomList from "./fetch/FetchRandomList";
+import AlcFreeCocktailList from "./components/CocktailList/AlcFreeCocktailList";
 
 function App() {
   // useState() für Gin, Vodka, Rum, Alkoholfrei, Random
@@ -49,8 +50,24 @@ function App() {
               <Header />
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/cocktaillist" element={<GinCocktailList />} />
+                {/* Gin */}
+                <Route path="/gin" element={<GinCocktailList />} />
+
+                {/* Vodka */}
+                <Route path="/vodka" element={<VodkaCocktailList />} />
+
+                {/* Rum */}
+                <Route path="/rum" element={<RumCocktailList />} />
+
+                {/* Alkoholfrei */}
+                <Route path="/alcfree" element={<AlcFreeCocktailList />} />
+
+                {/* Random */}
+                <Route path="/random" element={<RandomCocktailList />} />
+
+                {/* Cocktaildetails */}
                 <Route path="/cocktail/:id" element={<CocktailDetails />} />
+
                 {/* NUR ZUM TESTEN */}
                 <Route path="/test-cocktail/:name" element={<TestList />} /> 
               </Routes>
