@@ -1,34 +1,28 @@
+import "./CocktailDetails.scss";
 const CocktailDetails = () => {
   return (
-    <div class="card">
-      <div class="imgBox">
-        <div class="bark"></div>
-        <img src="cocktailbild">bild vom cocktail</img>
-        <h1>Cocktail Name</h1>
+    <>
+      <div class="card">
+        <div class="imgBox">
+          <div class="bark"></div>
+          <img src="https://image.ibb.co/fYzTrb/lastofus.jpg" />
+        </div>
+        <div class="details">
+          <h4 class="color1">You're not a Fossil! (YET)</h4>
+          <h4 class="color2 margin">(HAPPY BIRTHDAY)</h4>
+          <p>Dear Dad,</p>
+          <p>Let's see.. .</p>
+          <p>You’re never around, you</p>
+          <p>hate the music I’m into, you</p>
+          <p>practically despise the movies I</p>
+          <p>like, and yet somehow you still</p>
+          <p>manage to be the best dad every year.</p>
+          <p>How do you do that? :</p>
+          <p class="text-right">Happy Birthday, papa!</p>
+          <p class="text-right">♥Sarah</p>
+        </div>
       </div>
-      <div class="details">
-        <h4>
-          <span>Measure 1</span>Zutat 1
-        </h4>
-        <h4>
-          <span>Measure 2</span>Zutat 2
-        </h4>
-        <h4>
-          <span>Measure 3</span>Zutat 3
-        </h4>
-        <h4>
-          <span>Measure 4</span>Zutat 4
-        </h4>
-        <h4>
-          <span>Measure 5</span>Zutat 5
-        </h4>
-        <h4>
-          <span>Measure 6</span>Zutat 6
-        </h4>
-        <p>Glas</p>
-        <p>Zubereitung</p>
-      </div>
-    </div>
+    </>
   );
 };
 
