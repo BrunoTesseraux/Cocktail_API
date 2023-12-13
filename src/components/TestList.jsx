@@ -19,9 +19,9 @@ const TestList = () => {
 
     return ( 
         <article>
-            {cocktailFetch[0]?.drinks.map((cocktail) => <div>
+            {/* {cocktailFetch[0]?.drinks.map((cocktail) => <div>
                 <h2>{cocktail.strDrink}</h2>
-            </div>)}
+            </div>)} */}
         </article>
     );
 }
