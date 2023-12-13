@@ -1,4 +1,9 @@
-const CocktailList = () => {
+import CocktailListItem from "../CocktailListItem/CocktailListItem";
+import { useContext } from "react";
+import { GinContext } from "../Context/Context";
+import "./GinCocktailList.scss";
+
+const GinCocktailList = () => {
   const style = () => {
     const polaroids = document.querySelectorAll(".polaroid");
 
@@ -20,35 +25,25 @@ const CocktailList = () => {
     });
   };
 
+  const ginCocktailContext = useContext(GinContext);
+
   return (
     <section>
-      <button onClick={style()}>Style</button>
-      <div className="polaroid">
-        <div className="black"></div>
-      </div>
-      <div className="polaroid">
-        <div className="black"></div>
-      </div>
-      <div className="polaroid">
-        <div className="black"></div>
-      </div>
-      <div className="polaroid">
-        <div className="black"></div>
-      </div>
-      <div className="polaroid">
-        <div className="black"></div>
-      </div>
-      <div className="polaroid">
-        <div className="black"></div>
-      </div>
-      <div className="polaroid">
-        <div className="black"></div>
-      </div>
-      <div className="polaroid">
-        <div className="black"></div>
-      </div>
+      <button onClick={style()}></button>
+      {ginCocktailContext.ginCocktailsList.map((cockArray, index) => (
+        <div key={index} className="wrapper">
+          {cockArray.map((cock, subIndex) => (
+            <CocktailListItem
+              key={subIndex}
+              id={cock.idDrink}
+              name={cock.strDrink}
+              img={cock.strDrinkThumb}
+            />
+          ))}
+        </div>
+      ))}
     </section>
   );
 };
 
-export default CocktailList;
+export default GinCocktailList;
