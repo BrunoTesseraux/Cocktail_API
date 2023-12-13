@@ -44,7 +44,7 @@ function App() {
               <Header />
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/cocktails" element={<CocktailList />} />
+                <Route path="/cocktaillist" element={<CocktailList />} />
                 <Route path="/cocktail/:id" element={<CocktailDetails />} />
                 {/* NUR ZUM TESTEN */}
                 <Route path="/test-cocktail/:name" element={<TestList />} /> 

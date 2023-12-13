@@ -1,10 +1,11 @@
 import {Link} from "react-router-dom"
 
 const CocktailListItem = (props) => {
-  return <article>
-    <Link to={`./cocktail/${props.idDrink}`}>
-        <img src={props.strDrinkThumb} alt={props.strDrink}/>
-        <h3>{props.strDrink}</h3>
+  console.log(props)
+  return <article key={props.id}>
+    <Link to={`./cocktail/${props.id}`}>
+        <img src={props.img} alt={props.name}/>
+        <h3>{props.name}</h3>
 
     </Link>
         </article>;
