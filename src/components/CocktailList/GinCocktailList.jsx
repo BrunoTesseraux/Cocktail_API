@@ -27,7 +27,7 @@ const GinCocktailList = () => {
 const ginCocktailContext = useContext(GinContext)
 
   return (
-    <section>
+    <section className="wrapper">
         {ginCocktailContext.ginCocktailsList.map((cockArray, index) => (
     <div key={index}>
       {cockArray.map((cock, subIndex) => (
@@ -40,12 +40,6 @@ const ginCocktailContext = useContext(GinContext)
       ))}
     </div>
   ))}
-
-
-
-
-
-
   </section>
 );
 };
