@@ -8,7 +8,7 @@ import CocktailDetails from "./components/CocktailDetails/CocktailDetails";
 import TestList from "./components/TestList"; //NUR ZUM TESTEN
 import { useState } from "react";
 import { GinContext } from "./components/Context/Context";
-import FetchByIngredient from "./fetch/FetchGinList"; 
+import FetchGinList from "./fetch/FetchGinList"; 
 
 function App() {
 
@@ -18,7 +18,7 @@ function App() {
     <>
       <BrowserRouter>
       <GinContext.Provider value={{ginCocktailsList, setGinCocktailsList}}>
-        <FetchByIngredient/>
+        <FetchGinList/>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

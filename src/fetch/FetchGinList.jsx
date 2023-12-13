@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { GinContext } from "../components/Context/Context";
 
 
-const FetchByIngredient = () => {
+const FetchGinList = () => {
     
     // importieren context
     const ginCocktailsState = useContext(GinContext);
@@ -34,4 +34,4 @@ const FetchByIngredient = () => {
     }, []);
 }
 
-export default FetchByIngredient;
+export default FetchGinList;
