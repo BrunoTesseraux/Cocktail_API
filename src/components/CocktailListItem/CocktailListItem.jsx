@@ -1,7 +1,6 @@
 import {Link} from "react-router-dom"
 
 const CocktailListItem = (props) => {
-  console.log(props)
   return <article key={props.id}>
     <Link to={`./cocktail/${props.id}`}>
         <img src={props.img} alt={props.name}/>
