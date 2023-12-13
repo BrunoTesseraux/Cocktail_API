@@ -6,10 +6,9 @@ const Searchbar = () => {
   const [cocktailName, setCocktailName] = useState("");
   const [refresh, setRefresh] = useState(false);
 
-
   return <>
       <input onChange={(event) => setCocktailName(event.target.value)} type="text" placeholder="Search cocktail by name"/>
-      <Link onClick={() => setRefresh(!refresh)} state={"test"} to={`/test-cocktail/${cocktailName}`}>Search</Link>
+      <Link onClick={() => setRefresh(!refresh)} state={refresh} to={`/test-cocktail/${cocktailName}`}>Search</Link>
     </>;
 };
 

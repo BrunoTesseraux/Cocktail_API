@@ -8,7 +8,7 @@ const TestList = () => {
     const cocktailName = keyword.name;
     // console.log("state", cocktailFetch[0].drinks);
     const refresh = useLocation();
-    console.log(useLocation());
+    console.log(useLocation);
     console.log(keyword);
 
     useEffect(() => {
