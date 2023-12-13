@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./CocktailListItem.scss";
 
-const CocktailListItem = (props) => {
+const CocktailListItem = ({key, id, name, img}) => {
 
   // When the user clicks on div, open the popup
   const popupFunction = () => {
@@ -10,16 +10,16 @@ const CocktailListItem = (props) => {
           .then(response => response.json())
           .then(data => console.log(data.drinks));
           
-      var popup = document.getElementById("myPopup");
+      let popup = document.getElementById(id);
       popup.textContent = `POPOPOPOPUP`
-      popup.classList.toggle("show");
+      popup.classList.toggle = "show";
   }
 
   return (
-    <div onClick={popupFunction} key={props.id} className="polaroid popup">
-      <div className="popuptext" id="myPopup">
-        <img src={props.img} alt={props.name} />
-        <h3>{props.name}</h3>
+    <div onClick={popupFunction} key={id} className="polaroid popup">
+      <div id={id}>
+        <img src={img} alt={name} />
+        <h3>{name}</h3>
       </div>
     </div>
   );
