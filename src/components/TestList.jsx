@@ -7,8 +7,6 @@ const TestList = () => {
     const keyword = useParams();
     const cocktailName = keyword.name;
     // console.log("state", cocktailFetch[0].drinks);
-    const refresh = useLocation();
-    console.log(useLocation);
     console.log(keyword);
 
     useEffect(() => {
@@ -19,9 +17,9 @@ const TestList = () => {
 
     return ( 
         <article>
-            {/* {cocktailFetch[0]?.drinks.map((cocktail) => <div>
+            {cocktailFetch[0]?.drinks.map((cocktail) => <div>
                 <h2>{cocktail.strDrink}</h2>
-            </div>)} */}
+            </div>)}
         </article>
     );
 }

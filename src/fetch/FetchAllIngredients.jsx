@@ -1,6 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AllIngredientsContext } from "../components/Context/Context";
+
 
 const FetchAllIngredients = () => {
+
+    const allIngredientsState = useContext(AllIngredientsContext);
+
+    const allIngredients = allIngredientsState.allIngredients;  
+    const setAllIngredients = allIngredientsState.setAllIngredients;
+
+    console.log(allIngredientsState.allIngredients);
     const [getData, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -14,7 +23,7 @@ const FetchAllIngredients = () => {
                 return response.json();
             })
             .then(data => {
-                setData(data.drinks);
+                setAllIngredients([...allIngredients, data.drinks]);
                 setLoading(false);
             })
             .catch(error => {

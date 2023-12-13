@@ -1,32 +1,46 @@
 import { Link } from "react-router-dom";
 import "./Home.scss";
-import FetchGinList from "../fetch/FetchGinList";
-import FetchVodkaList from "../fetch/FetchVodkaList";
-import FetchAlcFreeList from "../fetch/FetchAlcFreeList";
-import FetchRumList from "../fetch/FetchRumList";
-import FetchRandomList from "../fetch/FetchRandomList";
+import { useContext, useState } from "react";
+import { AllIngredientsContext } from "../components/Context/Context";
 const Home = () => {
+
+  const allIngredientsContext = useContext(AllIngredientsContext);
+  const allIngredientsState =  allIngredientsContext.allIngredients[0];
+  const [cocktailName, setCocktailName] = useState("");
+
   return (
     <>
       {/* Gin */}
-      <FetchGinList />
-      <Link to="/gin">zur Gin Liste</Link>
+      <div className="link_container">
+        <Link className="link" onMouseEnter={(event) => setCocktailName(event.target.textContent)} to={`/cocktails/${cocktailName.trim().toLowerCase()}`}><div className="test"><img src="" alt="" /> <h3>Gin</h3> </div></Link>
+        </div>
 
       {/* Vodka */}
-      <FetchVodkaList />
-      <Link to="/vodka">zur Vodka Liste</Link>
+      <div className="link_container">
+        <Link className="link" onMouseEnter={(event) => setCocktailName(event.target.textContent)} to={`/cocktails/${cocktailName.trim().toLowerCase()}`}><div className="test"><img src="" alt="" /> <h3>Vodka</h3> </div></Link>
+        </div>
 
       {/* Rum */}
-      <FetchRumList />
-      <Link to="/rum">zur Rum Liste</Link>
+      <div className="link_container">
+        <Link className="link" onMouseEnter={(event) => setCocktailName(event.target.textContent)} to={`/cocktails/${cocktailName.trim().toLowerCase()}`}><div className="test"><img src="" alt="" /> <h3>Rum</h3> </div></Link>
+        </div>
+
+      {/* All ingredients */}
+      <div className="all-ingredients-container">
+        {allIngredientsState?.map((ingredient, index) => 
+         <Link key={index} onMouseEnter={(event) => setCocktailName(event.target.textContent)} to={`/cocktails/${cocktailName.trim().toLowerCase()}`}>
+          <h2>{ingredient.strIngredient1}</h2></Link>
+
+)}
+      </div>
 
       {/* Alkoholfrei */}
-      <FetchAlcFreeList />
-      <Link to="/alcfree">zur Alkoholfrei Liste</Link>
+      {/* <FetchAlcFreeList />
+      <Link to="/alcfree">zur Alkoholfrei Liste</Link> */}
 
       {/* Random */}
-      <FetchRandomList />
-      <Link to="/random">zur Random Liste</Link>
+      {/* <FetchRandomList />
+      <Link to="/random">zur Random Liste</Link> */}
     </>
   );
 };

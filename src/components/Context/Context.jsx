@@ -14,3 +14,7 @@ export const AlcFreeContext = createContext([]);
 
 // Random
 export const RandomCocktailContext = createContext([]);
+
+// All ingredients
+
+export const AllIngredientsContext = createContext([]);

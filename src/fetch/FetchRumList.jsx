@@ -9,7 +9,7 @@ const FetchRumList = () => {
     const rumCocktailsList = rumCocktailsState.rumCocktailsList;
 
     // Konsolen-Ausgabe
-    console.log("%c Rum: ", "background-color: indianred", rumCocktailsList);
+    // console.log("%c Rum: ", "background-color: indianred", rumCocktailsList);
     
     const [getData, setData] = useState([]);
     const [loading, setLoading] = useState(true);
