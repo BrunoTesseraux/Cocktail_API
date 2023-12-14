@@ -24,6 +24,7 @@ import FetchRumList from "./fetch/FetchRumList";
 import FetchAlcFreeList from "./fetch/FetchAlcFreeList";
 import FetchRandomList from "./fetch/FetchRandomList";
 import FetchAllIngredients from "./fetch/FetchAllIngredients";
+import FavoriteList from "./components/CocktailList/FavoriteList";
 
 function App() {
   // states ingredients
@@ -42,10 +43,12 @@ function App() {
   // local storage state
   const [favCocktails, setFavCocktails] = useState(getLocalData);
   
-  // update local data eachtime state changes
+  //update local data eachtime state changes
   useEffect(() => {
     setFavCocktails(getLocalData)
   }, [FavListContext]);
+
+  console.log("App.jsx", favCocktails);
 
   return (
     <>
@@ -84,7 +87,8 @@ function App() {
                           <Route path="/cocktails/:name" element={< CocktailList />} />
 
                           {/* NUR ZUM TESTEN */}
-                          <Route path="/:name" element={< SearchResultList />} />
+                          <Route path="/:name" element={< SearchResultList /> } />
+                          <Route path="/favorites" element={ <FavoriteList/> } />
                         </Routes>
                       <Footer />
                     </FavListContext.Provider>

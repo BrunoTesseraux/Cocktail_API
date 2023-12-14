@@ -12,6 +12,7 @@ const Header = () => {
         <Link to="/">
           <img className="logo" src="./logo.png" alt="" />
         </Link>
+        <Link to="/favorites">My Favorits</Link>
         <Searchbar />
         <Darkmode />
       </div>

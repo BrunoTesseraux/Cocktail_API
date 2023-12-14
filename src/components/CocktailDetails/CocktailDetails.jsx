@@ -18,14 +18,16 @@ const CocktailDetails = ({
   measure5,
   cocktail,
 }) => {
-  // local storage update
-  const favListContext = useContext(FavListContext);
-  // console.log("Detail", favListContext);
 
-  const addFavoriteCocktail = () => {
-    favListContext.setNewCocktail(cocktail);
-    console.log(favListContext.newCocktail);
-  };
+  const favListContext = useContext(FavListContext);
+  
+ const addToFavList = () => {
+  favListContext.setFavCocktails((prevFavCocktails) => {
+    const updatedFavCocktails = prevFavCocktails.concat(cocktail);
+    localStorage.setItem("drink", JSON.stringify(updatedFavCocktails));
+    return updatedFavCocktails;
+  });
+};
 
   return (
     <>
@@ -54,9 +56,9 @@ const CocktailDetails = ({
           <p>
             {zutat5} {measure5}
           </p>
-          <p className="beschreibung">{beschreibung}</p>
+          <p>{beschreibung}</p>
+        <button className="favorite-btn" onClick={addToFavList}>❤️</button>
         </div>
-        <button onClick={addFavoriteCocktail}>LIKE</button>
       </div>
     </>
   );
