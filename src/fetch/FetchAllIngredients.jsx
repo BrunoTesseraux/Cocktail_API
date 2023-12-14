@@ -9,7 +9,6 @@ const FetchAllIngredients = () => {
     const allIngredients = allIngredientsState.allIngredients;  
     const setAllIngredients = allIngredientsState.setAllIngredients;
 
-    console.log(allIngredientsState.allIngredients);
     const [getData, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);

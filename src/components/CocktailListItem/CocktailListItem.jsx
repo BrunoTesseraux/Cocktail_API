@@ -2,10 +2,10 @@ import { useState } from "react";
 import CocktailDetails from "../CocktailDetails/CocktailDetails";
 import "./CocktailListItem.scss";
 
-const CocktailListItem = ({ key, id, name, img }) => {
-  console.log(id);
+const CocktailListItem = ({ id, name, img }) => {
+
   const [cocktail, setCocktail] = useState([]);
-  console.log(cocktail[0]?.strIngredient1);
+
   // When the user clicks on div, open the popup
   const popupFunction = () => {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)

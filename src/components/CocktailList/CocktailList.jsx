@@ -6,30 +6,6 @@ import "./CocktailList.scss";
 
 const CocktailList = () => {
 
-  // =============================== Styles begin =========================================================
-  const style = () => {
-    const polaroids = document.querySelectorAll(".polaroid");
-    
-    polaroids.forEach(function (polaroid) {
-      const randomRotation = Math.floor(Math.random() * 11) - 5; // Zufälliger Winkel zwischen -5 und 5 Grad
-      const randomXOffset = Math.floor(Math.random() * 21) - 10; // Zufällige Verschiebung zwischen -10px und 10px horizontal
-      const randomYOffset = Math.floor(Math.random() * 21) - 10; // Zufällige Verschiebung zwischen -10px und 10px vertikal
-
-      const transformValue =
-        "rotate(" +
-        randomRotation +
-        "deg) translateX(" +
-        randomXOffset +
-        "px) translateY(" +
-        randomYOffset +
-        "px)";
-
-      polaroid.style.transform = transformValue;
-    });
-  };
-
-  // =================================== Styles end =========================================================
-  
   const cocktailIngredient = useParams();
   const endpoint = cocktailIngredient.name;
   const [apiData, setApiData] = useState([]);
@@ -38,6 +14,32 @@ const CocktailList = () => {
   const vodkaCocktailContext = useContext(VodkaContext);
   const rumCocktailContext = useContext(RumContext);
 
+  // =============================== Styles begin =========================================================
+  useEffect(() => {
+    const style = () => {
+      const polaroids = document.querySelectorAll(".polaroid");
+      
+      polaroids.forEach(function (polaroid) {
+        const randomRotation = Math.floor(Math.random() * 11) - 5; // Zufälliger Winkel zwischen -5 und 5 Grad
+        const randomXOffset = Math.floor(Math.random() * 21) - 10; // Zufällige Verschiebung zwischen -10px und 10px horizontal
+        const randomYOffset = Math.floor(Math.random() * 21) - 10; // Zufällige Verschiebung zwischen -10px und 10px vertikal
+  
+        const transformValue =
+          "rotate(" +
+          randomRotation +
+          "deg) translateX(" +
+          randomXOffset +
+          "px) translateY(" +
+          randomYOffset +
+          "px)";
+  
+        polaroid.style.transform = transformValue;
+      });
+    };
+    style()
+  }, [apiData])
+  // =================================== Styles end =========================================================
+  
   useEffect(() => {
       if (endpoint && !["gin", "vodka", "rum"].includes(endpoint)) {
         // Fetch data only if the endpoint is not gin, vodka, or rum
@@ -48,8 +50,6 @@ const CocktailList = () => {
       }
     }, [endpoint]);
 
-  console.log("Cocktaillist", apiData[0]);
-
   //conditional rendering
 
   const RenderCocktails = () => 
@@ -57,7 +57,7 @@ const CocktailList = () => {
     if(cocktailIngredient.name === "gin")
     {
       return <section>
-      <button onClick={style()}>STYLE</button>
+      {/* <button onClick={style()}>STYLE</button> */}
       {ginCocktailContext.ginCocktailsList.map((cockArray, index) => (
         <div key={index} className="wrapper">
           {cockArray.map((cock, subIndex) => (
@@ -75,7 +75,7 @@ const CocktailList = () => {
     else if(cocktailIngredient.name === "vodka")
     {
       return <section>
-      <button onClick={style()}></button>
+      {/* <button onClick={style()}></button> */}
       {vodkaCocktailContext.vodkaCocktailsList.map((cockArray, index) => (
         <div key={index} className="wrapper">
           {cockArray.map((cock, subIndex) => (
@@ -93,7 +93,7 @@ const CocktailList = () => {
     else if(cocktailIngredient.name === "rum")
     {
       return <section >
-      <button onClick={style()}></button>
+      {/* <button onClick={style()}></button> */}
       {rumCocktailContext.rumCocktailsList.map((cockArray, index) => (
         <div key={index} className="wrapper">
           {cockArray.map((cock, subIndex) => (
