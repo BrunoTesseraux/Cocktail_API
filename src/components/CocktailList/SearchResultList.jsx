@@ -39,18 +39,18 @@ const SearchResultList = () => {
             fetch(`https://thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailNameValue}`)
                 .then(response => response.json())
                 .then(data => setCocktailFetch([data]))
-    }, [cocktailNameValue])
+                .catch(error => console.log("error: ", error))
+    }, [cocktailNameValue]) 
 
-    return ( 
-        <section className="wrapper">
-            {cocktailFetch[0]?.drinks.map((cocktail, index) => 
-            <CocktailListItem
-            key={index}
-            id={cocktail.idDrink}
-            name={cocktail.strDrink}
-            img={cocktail.strDrinkThumb}
-        />)}
-        </section>
+    return (cocktailFetch[0]?.drinks < 1 ? <p>Ich habe leider den Cocktail {cocktailNameValue} NOCH nicht getrunken aber jetzt ist kommt es in meine To-Do-list <input type="text" name="" id="" placeholder="Erähl mir was zum Cocktail"/><button>Nachrich Senden</button></p> :  (<section className="wrapper">
+    {cocktailFetch[0]?.drinks.map((cocktail, index) => 
+    <CocktailListItem
+    key={index}
+    id={cocktail.idDrink}
+    name={cocktail.strDrink}
+    img={cocktail.strDrinkThumb}
+/>)}
+</section>)
     );
 }
 
