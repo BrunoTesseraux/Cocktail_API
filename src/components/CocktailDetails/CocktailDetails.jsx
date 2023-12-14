@@ -15,17 +15,17 @@ const CocktailDetails = ({
   measure4,
   measure5,
 }) => {
-  console.log(zutat1);
+ 
   return (
     <>
-      <div class="card">
-        <div class="imgBox">
-          <div class="bark"></div>
+      <div className="card">
+        <div className="imgBox">
+          <div className="bark"></div>
           <img src={`${img}`} />
           <h2>{name}</h2>
         </div>
-        <div class="details">
-          <h4 class="color1">{name}</h4>
+        <div className="details">
+          <h4 className="color1">{name}</h4>
           <p>
             {zutat1} {measure1}
           </p>

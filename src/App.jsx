@@ -4,7 +4,7 @@ import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import Home from "./page/Home";
 import CocktailList from "./components/CocktailList/CocktailList";
-import TestList from "./components/TestList"; //NUR ZUM TESTEN
+import SearchResultList from "./components/CocktailList/SearchResultList"; //NUR ZUM TESTEN
 import { useState } from "react";
 
 import {
@@ -63,10 +63,10 @@ function App() {
                   <Routes>
                     <Route path="/" element={<Home />} />
                     {/* path to cocktail list component  */}
-                    <Route path="/cocktails/:name" element={<CocktailList />} />
+                    <Route path="/cocktails/:name" element={< CocktailList />} />
 
                     {/* NUR ZUM TESTEN */}
-                    <Route path="/test-cocktail/:name" element={<TestList />} />
+                    <Route path="/:name" element={< SearchResultList />} />
                   </Routes>
                   <Footer />
                   </AllIngredientsContext.Provider>
