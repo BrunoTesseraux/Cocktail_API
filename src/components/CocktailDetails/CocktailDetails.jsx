@@ -16,7 +16,7 @@ const CocktailDetails = ({
   measure3,
   measure4,
   measure5,
-  cocktail
+  cocktail,
 }) => {
 
   const favListContext = useContext(FavListContext);
