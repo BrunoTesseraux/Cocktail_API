@@ -1,13 +1,18 @@
-.test
-{
-    width: 100px;
-    height: 100px;
-    background-color: tomato ;
+.all-ingredients-container {
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  overflow: auto;
+  scroll-behavior: auto;
+  background: tomato;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  a {
+    text-decoration: none;
+    background-color: teal;
+    margin: 5px;
+  }
 }
-
-.link_container
-{
-        width: 100px;
-        height: 100px;
-        background-color: tomato;
-    }
