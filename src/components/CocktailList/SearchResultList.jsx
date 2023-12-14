@@ -10,29 +10,29 @@ const SearchResultList = () => {
   const cocktailNameValue = keyword.name;
 
   // =============================== styles begin =========================================================
-  useEffect(() => {
-    const style = () => {
-      const polaroids = document.querySelectorAll(".polaroid");
+  // useEffect(() => {
+  //   const style = () => {
+  //     const polaroids = document.querySelectorAll(".polaroid");
 
-      polaroids.forEach(function (polaroid) {
-        const randomRotation = Math.floor(Math.random() * 11) - 5; // Zufälliger Winkel zwischen -5 und 5 Grad
-        const randomXOffset = Math.floor(Math.random() * 21) - 10; // Zufällige Verschiebung zwischen -10px und 10px horizontal
-        const randomYOffset = Math.floor(Math.random() * 21) - 10; // Zufällige Verschiebung zwischen -10px und 10px vertikal
+  //     polaroids.forEach(function (polaroid) {
+  //       const randomRotation = Math.floor(Math.random() * 11) - 5; // Zufälliger Winkel zwischen -5 und 5 Grad
+  //       const randomXOffset = Math.floor(Math.random() * 21) - 10; // Zufällige Verschiebung zwischen -10px und 10px horizontal
+  //       const randomYOffset = Math.floor(Math.random() * 21) - 10; // Zufällige Verschiebung zwischen -10px und 10px vertikal
 
-        const transformValue =
-          "rotate(" +
-          randomRotation +
-          "deg) translateX(" +
-          randomXOffset +
-          "px) translateY(" +
-          randomYOffset +
-          "px)";
+  //       const transformValue =
+  //         "rotate(" +
+  //         randomRotation +
+  //         "deg) translateX(" +
+  //         randomXOffset +
+  //         "px) translateY(" +
+  //         randomYOffset +
+  //         "px)";
 
-        polaroid.style.transform = transformValue;
-      });
-    };
-    style();
-  }, [cocktailFetch]);
+  //       polaroid.style.transform = transformValue;
+  //     });
+  //   };
+  //   style();
+  // }, [cocktailFetch]);
   // =================================== styles end =========================================================
   console.log(cocktailFetch[0]?.drinks);
   useEffect(() => {

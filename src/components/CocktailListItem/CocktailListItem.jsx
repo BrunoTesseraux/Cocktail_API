@@ -1,9 +1,7 @@
-
 import { useContext, useEffect, useState } from "react";
 
 import CocktailDetails from "../CocktailDetails/CocktailDetails";
 import "./CocktailListItem.scss";
-import { FavListContext } from "../Context/Context";
 
 const CocktailListItem = ({ id, name, img }) => {
   const [cocktail, setCocktail] = useState([]);
@@ -43,6 +41,7 @@ const CocktailListItem = ({ id, name, img }) => {
             measure3={cocktail[0]?.strMeasure3}
             measure4={cocktail[0]?.strMeasure4}
             measure5={cocktail[0]?.strMeasure5}
+            cocktail={cocktail}
           />
         </span>
       </div>
