@@ -35,14 +35,15 @@ const SearchResultList = () => {
     }, [cocktailFetch])
   // =================================== styles end =========================================================
 
+  console.log(cocktailFetch[0]?.drinks);
     useEffect(() => {
             fetch(`https://thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailNameValue}`)
                 .then(response => response.json())
                 .then(data => setCocktailFetch([data]))
+                .catch((error) => console.log(error))
     }, [cocktailNameValue])
 
-    return ( 
-        <section className="wrapper">
+    return (cocktailFetch[0]?.drinks < 1 ? <p>No Results</p> :  (<section className="wrapper">
             {cocktailFetch[0]?.drinks.map((cocktail, index) => 
             <CocktailListItem
             key={index}
@@ -50,7 +51,7 @@ const SearchResultList = () => {
             name={cocktail.strDrink}
             img={cocktail.strDrinkThumb}
         />)}
-        </section>
+        </section>)
     );
 }
 
