@@ -17,7 +17,7 @@ import {
   VodkaContext,
 } from "./components/Context/Context";
 
-// import fetches 
+// import fetches
 import FetchGinList from "./fetch/FetchGinList";
 import FetchVodkaList from "./fetch/FetchVodkaList";
 import FetchRumList from "./fetch/FetchRumList";
@@ -63,6 +63,7 @@ function App() {
                 <RandomCocktailContext.Provider
                   value={{ randomCocktail, setRandomCocktail }}
                 >
+
                   <AllIngredientsContext.Provider value={{allIngredients, setAllIngredients}}>
       
                     <FavListContext.Provider value={{favCocktails, setFavCocktails}}> 
@@ -75,6 +76,8 @@ function App() {
                         <FetchRandomList />
                         <FetchAllIngredients />
                         <Header />
+                                          <div className="ziegelwand"></div>
+
                         <Routes>
                           <Route path="/" element={<Home />} />
                           {/* path to cocktail list component  */}
@@ -85,6 +88,7 @@ function App() {
                         </Routes>
                       <Footer />
                     </FavListContext.Provider>
+
                   </AllIngredientsContext.Provider>
                 </RandomCocktailContext.Provider>
               </AlcFreeContext.Provider>

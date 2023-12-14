@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./Home.scss";
 import { useContext, useState } from "react";
 import { AllIngredientsContext } from "../components/Context/Context";
+import Random from "../components/random/Random";
 const Home = () => {
   const allIngredientsContext = useContext(AllIngredientsContext);
   const allIngredientsState = allIngredientsContext.allIngredients[0];
@@ -10,7 +11,17 @@ const Home = () => {
   return (
     <section className="home">
       {/* Gin */}
-      <Link
+
+      <Link className="link" to="/cocktails/gin">
+  <div className="polaroid">
+    <div className="test">
+      <img src="./gin.avif" className="home-link" alt="" />
+      <h3>Gin</h3>
+    </div>
+  </div>
+</Link>
+
+  {/*     <Link
         className="link"
         onMouseEnter={(event) => setCocktailName(event.target.textContent)}
         to={`/cocktails/${cocktailName.trim().toLowerCase()}`}
@@ -20,10 +31,25 @@ const Home = () => {
             <img src="./gin.avif" className="home-link" alt="" /> <h3>Gin</h3>{" "}
           </div>
         </div>
-      </Link>
+      </Link> */}
 
       {/* Vodka */}
-      <Link
+
+
+
+      <Link className="link" to="/cocktails/vodka">
+  <div className="polaroid">
+    <div className="test">
+      <img src="./vodka.avif" className="home-link" alt="" />
+      <h3>Vodka</h3>
+    </div>
+  </div>
+</Link>
+
+
+
+
+{/*       <Link
         className="link"
         onMouseEnter={(event) => setCocktailName(event.target.textContent)}
         to={`/cocktails/${cocktailName.trim().toLowerCase()}`}
@@ -34,10 +60,22 @@ const Home = () => {
             <h3>Vodka</h3>{" "}
           </div>
         </div>
-      </Link>
+      </Link> */}
 
       {/* Rum */}
-      <Link
+
+      <Link className="link" to="/cocktails/rum">
+  <div className="polaroid">
+    <div className="test">
+      <img src="./rum.avif" className="home-link" alt="" />
+      <h3>Rum</h3>
+    </div>
+  </div>
+</Link>
+
+
+
+     {/*  <Link
         className="link"
         onMouseEnter={(event) => setCocktailName(event.target.textContent)}
         to={`/cocktails/${cocktailName.trim().toLowerCase()}`}
@@ -47,10 +85,22 @@ const Home = () => {
             <img src="./rum.avif" className="home-link" alt="" /> <h3>Rum</h3>{" "}
           </div>
         </div>
-      </Link>
+      </Link> */}
 
       {/* All ingredients */}
       <div className="all-ingredients-container">
+  {allIngredientsState?.map((ingredient, index) => (
+    <Link
+      key={index}
+      className="link"
+      to={`/cocktails/${ingredient.strIngredient1.trim().toLowerCase()}`}
+    >
+      <h2>{ingredient.strIngredient1}</h2>
+    </Link>
+  ))}
+</div>
+
+     {/*  <div className="all-ingredients-container">
         {allIngredientsState?.map((ingredient, index) => (
           <Link
             key={index}
@@ -60,15 +110,11 @@ const Home = () => {
             <h2>{ingredient.strIngredient1}</h2>
           </Link>
         ))}
-      </div>
+      </div> */}
 
-      {/* Alkoholfrei */}
-      {/* <FetchAlcFreeList />
-      <Link to="/alcfree">zur Alkoholfrei Liste</Link> */}
+     
 
-      {/* Random */}
-      {/* <FetchRandomList />
-      <Link to="/random">zur Random Liste</Link> */}
+      <Random/>
     </section>
   );
 };

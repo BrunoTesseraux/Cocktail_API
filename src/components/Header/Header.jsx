@@ -9,7 +9,9 @@ const Header = () => {
     <header>
       <h1>Mixology 101</h1>
       <div>
-        <Link to="/">Logo</Link>
+        <Link to="/">
+          <img className="logo" src="./logo.png" alt="" />
+        </Link>
         <Searchbar />
         <Darkmode />
       </div>
