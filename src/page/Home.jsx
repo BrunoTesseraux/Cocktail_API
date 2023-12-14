@@ -11,7 +11,17 @@ const Home = () => {
   return (
     <section className="home">
       {/* Gin */}
-      <Link
+
+      <Link className="link" to="/cocktails/gin">
+  <div className="polaroid">
+    <div className="test">
+      <img src="./gin.avif" className="home-link" alt="" />
+      <h3>Gin</h3>
+    </div>
+  </div>
+</Link>
+
+  {/*     <Link
         className="link"
         onMouseEnter={(event) => setCocktailName(event.target.textContent)}
         to={`/cocktails/${cocktailName.trim().toLowerCase()}`}
@@ -21,10 +31,25 @@ const Home = () => {
             <img src="./gin.avif" className="home-link" alt="" /> <h3>Gin</h3>{" "}
           </div>
         </div>
-      </Link>
+      </Link> */}
 
       {/* Vodka */}
-      <Link
+
+
+
+      <Link className="link" to="/cocktails/vodka">
+  <div className="polaroid">
+    <div className="test">
+      <img src="./vodka.avif" className="home-link" alt="" />
+      <h3>Vodka</h3>
+    </div>
+  </div>
+</Link>
+
+
+
+
+{/*       <Link
         className="link"
         onMouseEnter={(event) => setCocktailName(event.target.textContent)}
         to={`/cocktails/${cocktailName.trim().toLowerCase()}`}
@@ -35,10 +60,22 @@ const Home = () => {
             <h3>Vodka</h3>{" "}
           </div>
         </div>
-      </Link>
+      </Link> */}
 
       {/* Rum */}
-      <Link
+
+      <Link className="link" to="/cocktails/rum">
+  <div className="polaroid">
+    <div className="test">
+      <img src="./rum.avif" className="home-link" alt="" />
+      <h3>Rum</h3>
+    </div>
+  </div>
+</Link>
+
+
+
+     {/*  <Link
         className="link"
         onMouseEnter={(event) => setCocktailName(event.target.textContent)}
         to={`/cocktails/${cocktailName.trim().toLowerCase()}`}
@@ -48,10 +85,22 @@ const Home = () => {
             <img src="./rum.avif" className="home-link" alt="" /> <h3>Rum</h3>{" "}
           </div>
         </div>
-      </Link>
+      </Link> */}
 
       {/* All ingredients */}
       <div className="all-ingredients-container">
+  {allIngredientsState?.map((ingredient, index) => (
+    <Link
+      key={index}
+      className="link"
+      to={`/cocktails/${ingredient.strIngredient1.trim().toLowerCase()}`}
+    >
+      <h2>{ingredient.strIngredient1}</h2>
+    </Link>
+  ))}
+</div>
+
+     {/*  <div className="all-ingredients-container">
         {allIngredientsState?.map((ingredient, index) => (
           <Link
             key={index}
@@ -61,7 +110,7 @@ const Home = () => {
             <h2>{ingredient.strIngredient1}</h2>
           </Link>
         ))}
-      </div>
+      </div> */}
 
      
 
