@@ -33,8 +33,7 @@ const SearchResultList = () => {
         };
         style()
     }, [cocktailFetch])
-  // =================================== styles end =========================================================
-  console.log(cocktailFetch[0]?.drinks);
+    // =================================== styles end =========================================================
     useEffect(() => {
             fetch(`https://thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailNameValue}`)
                 .then(response => response.json())

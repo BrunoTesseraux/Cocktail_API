@@ -5,11 +5,12 @@ import Footer from "./components/footer/footer";
 import Home from "./page/Home";
 import CocktailList from "./components/CocktailList/CocktailList";
 import SearchResultList from "./components/CocktailList/SearchResultList"; //NUR ZUM TESTEN
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   AlcFreeContext,
   AllIngredientsContext,
+  FavListContext,
   GinContext,
   RandomCocktailContext,
   RumContext,
@@ -24,7 +25,6 @@ import FetchAlcFreeList from "./fetch/FetchAlcFreeList";
 import FetchRandomList from "./fetch/FetchRandomList";
 import FetchAllIngredients from "./fetch/FetchAllIngredients";
 
-
 function App() {
   // states ingredients
   const [ginCocktailsList, setGinCocktailsList] = useState([]);
@@ -33,6 +33,19 @@ function App() {
   const [alcFreeCocktailsList, setAlcFreeCocktailsList] = useState([]);
   const [randomCocktail, setRandomCocktail] = useState([]);
   const [allIngredients, setAllIngredients] = useState([]);
+
+  // get local storage
+  const getLocalData = () => {
+    const favListLocal = localStorage.getItem('drink');
+    return favListLocal ? JSON.parse(favListLocal) : [];
+  };
+  // local storage state
+  const [favCocktails, setFavCocktails] = useState(getLocalData);
+  
+  // update local data eachtime state changes
+  useEffect(() => {
+    setFavCocktails(getLocalData)
+  }, [FavListContext]);
 
   return (
     <>
@@ -51,24 +64,27 @@ function App() {
                   value={{ randomCocktail, setRandomCocktail }}
                 >
                   <AllIngredientsContext.Provider value={{allIngredients, setAllIngredients}}>
+      
+                    <FavListContext.Provider value={{favCocktails, setFavCocktails}}> 
 
-                  {/* Fetch Components*/}
-                  <FetchGinList />
-                  <FetchVodkaList />
-                  <FetchRumList />
-                  <FetchAlcFreeList />
-                  <FetchRandomList />
-                  <FetchAllIngredients />
-                  <Header />
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    {/* path to cocktail list component  */}
-                    <Route path="/cocktails/:name" element={< CocktailList />} />
+                        {/* Fetch Components*/}
+                        <FetchGinList />
+                        <FetchVodkaList />
+                        <FetchRumList />
+                        <FetchAlcFreeList />
+                        <FetchRandomList />
+                        <FetchAllIngredients />
+                        <Header />
+                        <Routes>
+                          <Route path="/" element={<Home />} />
+                          {/* path to cocktail list component  */}
+                          <Route path="/cocktails/:name" element={< CocktailList />} />
 
-                    {/* NUR ZUM TESTEN */}
-                    <Route path="/:name" element={< SearchResultList />} />
-                  </Routes>
-                  <Footer />
+                          {/* NUR ZUM TESTEN */}
+                          <Route path="/:name" element={< SearchResultList />} />
+                        </Routes>
+                      <Footer />
+                    </FavListContext.Provider>
                   </AllIngredientsContext.Provider>
                 </RandomCocktailContext.Provider>
               </AlcFreeContext.Provider>
