@@ -4,12 +4,18 @@
   width: 250px;
   text-align: center;
   box-shadow: 0 2.1rem 2rem rgba(0, 0, 0, 0.3);
+  h3 {
+    font-size: 1.4rem;
+  }
   img.home-link {
     object-fit: cover;
     padding: 25px;
     height: 250px;
     width: 250px;
   }
+}
+a.link {
+  color: black;
 }
 .overlay {
   position: fixed;
@@ -40,7 +46,7 @@
   padding: 8px 0;
   position: fixed;
   z-index: 10;
-  bottom: 40%;
+  bottom: 39%;
   left: 50%;
   margin-left: -80px;
 }

@@ -4,7 +4,6 @@ import CocktailListItem from "../CocktailListItem/CocktailListItem";
 import "./SearchResultList.scss";
 
 const SearchResultList = () => {
-
   const [cocktailFetch, setCocktailFetch] = useState([]);
   const keyword = useParams();
   const cocktailNameValue = keyword.name;
@@ -50,9 +49,9 @@ const SearchResultList = () => {
       <p>
         Ich habe leider den Cocktail <span>{cocktailNameValue}</span> NOCH nicht
         getrunken aber jetzt ist kommt es in meine To-Do-list{" "}
-        <input type="text" placeholder="Erähl mir was zum Cocktail" />
-        <button>Nachrich Senden</button>
       </p>
+      <input type="text" placeholder="Erähl mir was zum Cocktail" />
+      <button>Nachrich Senden</button>
     </div>
   ) : (
     <section className="wrapper">

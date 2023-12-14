@@ -16,18 +16,16 @@ const CocktailDetails = ({
   measure3,
   measure4,
   measure5,
-  cocktail
+  cocktail,
 }) => {
-
   // local storage update
   const favListContext = useContext(FavListContext);
   // console.log("Detail", favListContext);
 
-  const addFavoriteCocktail = () =>
-  {
+  const addFavoriteCocktail = () => {
     favListContext.setNewCocktail(cocktail);
     console.log(favListContext.newCocktail);
-  }
+  };
 
   return (
     <>
@@ -56,7 +54,7 @@ const CocktailDetails = ({
           <p>
             {zutat5} {measure5}
           </p>
-          <p>{beschreibung}</p>
+          <p className="beschreibung">{beschreibung}</p>
         </div>
         <button onClick={addFavoriteCocktail}>LIKE</button>
       </div>

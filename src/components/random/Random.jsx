@@ -16,8 +16,9 @@ const Random = ({ id, name, img }) => {
   };
 
   return (
-    <div onClick={popupFunction} className="popup randombutton">
-      <img src="./shaker.jpg" alt="" />
+    <div onClick={popupFunction} className="popup polaroid">
+      <img className="home-link" src="./shaker.jpg" alt="" />
+      <h3>Random</h3>
       <span className="popuptext" id="randombutton">
         <CocktailDetails
           name={random[0]?.strDrink}
