@@ -24,14 +24,14 @@ const CocktailList = () => {
   //     const polaroids = document.querySelectorAll(".polaroid");
 
   //     polaroids.forEach(function (polaroid) {
-  //       const randomRotation = Math.floor(Math.random() * 11) - 5; // Zufälliger Winkel zwischen -5 und 5 Grad
-  //       const randomXOffset = Math.floor(Math.random() * 21) - 10; // Zufällige Verschiebung zwischen -10px und 10px horizontal
-  //       const randomYOffset = Math.floor(Math.random() * 21) - 10; // Zufällige Verschiebung zwischen -10px und 10px vertikal
+  //       // const randomRotation = Math.floor(Math.random() * 11) - 5; // Zufälliger Winkel zwischen -5 und 5 Grad
+  //       const randomXOffset = Math.floor(Math.random() * 31) - 15; // Zufällige Verschiebung zwischen -10px und 10px horizontal
+  //       const randomYOffset = Math.floor(Math.random() * 31) - 15; // Zufällige Verschiebung zwischen -10px und 10px vertikal
 
   //       const transformValue =
-  //         "rotate(" +
-  //         randomRotation +
-  //         "deg) translateX(" +
+  //         // "rotate(" +
+  //         // randomRotation +
+  //         "translateX(" +
   //         randomXOffset +
   //         "px) translateY(" +
   //         randomYOffset +

@@ -1,9 +1,8 @@
 import { useState } from "react";
 import CocktailDetails from "../CocktailDetails/CocktailDetails";
-import "./Random.scss"
+import "./Random.scss";
 
 const Random = ({ id, name, img }) => {
-
   const [random, setRandom] = useState([]);
 
   // When the user clicks on div, open the popup
@@ -17,7 +16,8 @@ const Random = ({ id, name, img }) => {
   };
 
   return (
-    <button onClick={popupFunction}  className="popup randombutton">Random Cocktail
+    <div onClick={popupFunction} className="popup randombutton">
+      <img src="./shaker.jpg" alt="" />
       <span className="popuptext" id="randombutton">
         <CocktailDetails
           name={random[0]?.strDrink}
@@ -35,7 +35,7 @@ const Random = ({ id, name, img }) => {
           measure5={random[0]?.strMeasure5}
         />
       </span>
-    </button>
+    </div>
   );
 };
 

@@ -7,15 +7,13 @@ img {
   display: block;
   max-width: 100%;
 }
-
-:root {
+.ziegelwand {
   background-image: url("/Ziegelwannhintergund.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-#root {
-  background-image: url("/Ziegelwannhintergund.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
 }

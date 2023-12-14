@@ -16,14 +16,13 @@ import {
   VodkaContext,
 } from "./components/Context/Context";
 
-// import fetches 
+// import fetches
 import FetchGinList from "./fetch/FetchGinList";
 import FetchVodkaList from "./fetch/FetchVodkaList";
 import FetchRumList from "./fetch/FetchRumList";
 import FetchAlcFreeList from "./fetch/FetchAlcFreeList";
 import FetchRandomList from "./fetch/FetchRandomList";
 import FetchAllIngredients from "./fetch/FetchAllIngredients";
-
 
 function App() {
   // states ingredients
@@ -50,25 +49,30 @@ function App() {
                 <RandomCocktailContext.Provider
                   value={{ randomCocktail, setRandomCocktail }}
                 >
-                  <AllIngredientsContext.Provider value={{allIngredients, setAllIngredients}}>
+                  <AllIngredientsContext.Provider
+                    value={{ allIngredients, setAllIngredients }}
+                  >
+                    {/* Fetch Components*/}
+                    <FetchGinList />
+                    <FetchVodkaList />
+                    <FetchRumList />
+                    <FetchAlcFreeList />
+                    <FetchRandomList />
+                    <FetchAllIngredients />
+                    <Header />
+                    <div className="ziegelwand"></div>
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      {/* path to cocktail list component  */}
+                      <Route
+                        path="/cocktails/:name"
+                        element={<CocktailList />}
+                      />
 
-                  {/* Fetch Components*/}
-                  <FetchGinList />
-                  <FetchVodkaList />
-                  <FetchRumList />
-                  <FetchAlcFreeList />
-                  <FetchRandomList />
-                  <FetchAllIngredients />
-                  <Header />
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    {/* path to cocktail list component  */}
-                    <Route path="/cocktails/:name" element={< CocktailList />} />
-
-                    {/* NUR ZUM TESTEN */}
-                    <Route path="/:name" element={< SearchResultList />} />
-                  </Routes>
-                  <Footer />
+                      {/* NUR ZUM TESTEN */}
+                      <Route path="/:name" element={<SearchResultList />} />
+                    </Routes>
+                    <Footer />
                   </AllIngredientsContext.Provider>
                 </RandomCocktailContext.Provider>
               </AlcFreeContext.Provider>
