@@ -14,7 +14,9 @@ const Searchbar = () => {
         placeholder="Search cocktail by name"
         value={cocktailName}
       />
-      <Link to={`/${cocktailName}`}>Search</Link>
+      <Link to={`/${cocktailName}`}>
+        <button>Search</button>
+      </Link>
     </div>
   );
 };

@@ -11,8 +11,15 @@
     width: 250px;
   }
 }
-
-/* Popup container - can be anything you want */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  z-index: 5; /* Stelle sicher, dass das Overlay über dem Rest liegt */
+}
 .popup {
   position: relative;
   display: inline-block;
@@ -26,7 +33,6 @@
 /* The actual popup */
 .popup .popuptext {
   visibility: hidden;
-  width: 160px;
   background-color: #555;
   color: #fff;
   text-align: center;
@@ -34,21 +40,9 @@
   padding: 8px 0;
   position: fixed;
   z-index: 10;
-  bottom: 50%;
+  bottom: 40%;
   left: 50%;
   margin-left: -80px;
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
 }
 
 /* Toggle this class - hide and show the popup */
@@ -77,44 +71,4 @@
   to {
     opacity: 1;
   }
-}
-
-.polaroid:nth-of-type(1) {
-  transform: rotate(3deg) translateX(2px) translateY(5px);
-}
-
-.polaroid:nth-of-type(2) {
-  transform: rotate(-2deg) translateX(-8px) translateY(7px);
-}
-
-.polaroid:nth-of-type(3) {
-  transform: rotate(5deg) translateX(10px) translateY(-3px);
-}
-
-.polaroid:nth-of-type(4) {
-  transform: rotate(-4deg) translateX(15px) translateY(8px);
-}
-
-.polaroid:nth-of-type(5) {
-  transform: rotate(2deg) translateX(-5px) translateY(-5px);
-}
-
-.polaroid:nth-of-type(6) {
-  transform: rotate(1deg) translateX(7px) translateY(-2px);
-}
-
-.polaroid:nth-of-type(7) {
-  transform: rotate(-3deg) translateX(4px) translateY(9px);
-}
-
-.polaroid:nth-of-type(8) {
-  transform: rotate(6deg) translateX(-9px) translateY(3px);
-}
-
-.polaroid:nth-of-type(9) {
-  transform: rotate(-1deg) translateX(6px) translateY(-8px);
-}
-
-.polaroid:nth-of-type(10) {
-  transform: rotate(4deg) translateX(-3px) translateY(12px);
 }
