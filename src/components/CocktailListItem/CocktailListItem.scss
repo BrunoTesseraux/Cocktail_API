@@ -1,6 +1,15 @@
 .polaroid {
   background-color: white;
-  // Box shadow polaroids: box-shadow: 0 2.1rem 2rem rgba(0, 0, 0, 0.3);
+  height: 300px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 2.1rem 2rem rgba(0, 0, 0, 0.3);
+  img.home-link {
+    object-fit: cover;
+    padding: 25px;
+    height: 250px;
+    width: 250px;
+  }
 }
 
 /* Popup container - can be anything you want */
@@ -24,7 +33,7 @@
   border-radius: 6px;
   padding: 8px 0;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   bottom: 50%;
   left: 50%;
   margin-left: -80px;
@@ -68,4 +77,44 @@
   to {
     opacity: 1;
   }
+}
+
+.polaroid:nth-of-type(1) {
+  transform: rotate(3deg) translateX(2px) translateY(5px);
+}
+
+.polaroid:nth-of-type(2) {
+  transform: rotate(-2deg) translateX(-8px) translateY(7px);
+}
+
+.polaroid:nth-of-type(3) {
+  transform: rotate(5deg) translateX(10px) translateY(-3px);
+}
+
+.polaroid:nth-of-type(4) {
+  transform: rotate(-4deg) translateX(15px) translateY(8px);
+}
+
+.polaroid:nth-of-type(5) {
+  transform: rotate(2deg) translateX(-5px) translateY(-5px);
+}
+
+.polaroid:nth-of-type(6) {
+  transform: rotate(1deg) translateX(7px) translateY(-2px);
+}
+
+.polaroid:nth-of-type(7) {
+  transform: rotate(-3deg) translateX(4px) translateY(9px);
+}
+
+.polaroid:nth-of-type(8) {
+  transform: rotate(6deg) translateX(-9px) translateY(3px);
+}
+
+.polaroid:nth-of-type(9) {
+  transform: rotate(-1deg) translateX(6px) translateY(-8px);
+}
+
+.polaroid:nth-of-type(10) {
+  transform: rotate(4deg) translateX(-3px) translateY(12px);
 }

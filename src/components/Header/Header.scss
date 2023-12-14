@@ -1,14 +1,19 @@
-/* header {
+header {
   position: fixed;
   top: 0;
   width: 100%;
   height: 75px;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.231);
   h1 {
     text-align: center;
   }
+  a {
+    text-decoration: none;
+    font-weight: 700;
+  }
   div {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
- */

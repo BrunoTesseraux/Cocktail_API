@@ -1,18 +1,29 @@
-.all-ingredients-container {
-  width: 500px;
-  height: 300px;
-  position: absolute;
-  bottom: 100px;
-  left: 50%;
-  overflow: auto;
-  scroll-behavior: auto;
-  background: tomato;
-  text-align: center;
+.home {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  a {
+  margin-top: 125px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+  .link {
+    margin: auto;
     text-decoration: none;
-    background-color: teal;
-    margin: 5px;
+  }
+  .all-ingredients-container {
+    grid-column: 1/4;
+    width: 1000px;
+    margin: auto;
+    height: 300px;
+    bottom: 100px;
+    left: 50%;
+    overflow: auto;
+    scroll-behavior: auto;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    a {
+      text-decoration: none;
+      background-color: rgba(255, 236, 25, 0.817);
+      border-radius: 3px;
+      margin: 5px;
+    }
   }
 }

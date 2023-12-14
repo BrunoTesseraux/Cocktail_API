@@ -3,7 +3,6 @@ import CocktailDetails from "../CocktailDetails/CocktailDetails";
 import "./CocktailListItem.scss";
 
 const CocktailListItem = ({ id, name, img }) => {
-
   const [cocktail, setCocktail] = useState([]);
 
   // When the user clicks on div, open the popup
@@ -19,7 +18,7 @@ const CocktailListItem = ({ id, name, img }) => {
 
   return (
     <div onClick={popupFunction} key={id} className="polaroid popup">
-      <img src={img} alt={name} />
+      <img src={img} className="home-link" alt={name} />
       <h3>{name}</h3>
       <span className="popuptext" id={id}>
         <CocktailDetails

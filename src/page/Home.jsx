@@ -8,45 +8,46 @@ const Home = () => {
   const [cocktailName, setCocktailName] = useState("");
 
   return (
-    <>
+    <section className="home">
       {/* Gin */}
-      <div className="link_container">
-        <Link
-          className="link"
-          onMouseEnter={(event) => setCocktailName(event.target.textContent)}
-          to={`/cocktails/${cocktailName.trim().toLowerCase()}`}
-        >
+      <Link
+        className="link"
+        onMouseEnter={(event) => setCocktailName(event.target.textContent)}
+        to={`/cocktails/${cocktailName.trim().toLowerCase()}`}
+      >
+        <div className="polaroid">
           <div className="test">
-            <img src="" alt="" /> <h3>Gin</h3>{" "}
+            <img src="./gin.avif" className="home-link" alt="" /> <h3>Gin</h3>{" "}
           </div>
-        </Link>
-      </div>
+        </div>
+      </Link>
 
       {/* Vodka */}
-      <div className="link_container">
-        <Link
-          className="link"
-          onMouseEnter={(event) => setCocktailName(event.target.textContent)}
-          to={`/cocktails/${cocktailName.trim().toLowerCase()}`}
-        >
+      <Link
+        className="link"
+        onMouseEnter={(event) => setCocktailName(event.target.textContent)}
+        to={`/cocktails/${cocktailName.trim().toLowerCase()}`}
+      >
+        <div className="polaroid">
           <div className="test">
-            <img src="" alt="" /> <h3>Vodka</h3>{" "}
+            <img src="./vodka.avif" className="home-link" alt="" />{" "}
+            <h3>Vodka</h3>{" "}
           </div>
-        </Link>
-      </div>
+        </div>
+      </Link>
 
       {/* Rum */}
-      <div className="link_container">
-        <Link
-          className="link"
-          onMouseEnter={(event) => setCocktailName(event.target.textContent)}
-          to={`/cocktails/${cocktailName.trim().toLowerCase()}`}
-        >
+      <Link
+        className="link"
+        onMouseEnter={(event) => setCocktailName(event.target.textContent)}
+        to={`/cocktails/${cocktailName.trim().toLowerCase()}`}
+      >
+        <div className="polaroid">
           <div className="test">
-            <img src="" alt="" /> <h3>Rum</h3>{" "}
+            <img src="./rum.avif" className="home-link" alt="" /> <h3>Rum</h3>{" "}
           </div>
-        </Link>
-      </div>
+        </div>
+      </Link>
 
       {/* All ingredients */}
       <div className="all-ingredients-container">
@@ -68,7 +69,7 @@ const Home = () => {
       {/* Random */}
       {/* <FetchRandomList />
       <Link to="/random">zur Random Liste</Link> */}
-    </>
+    </section>
   );
 };
 
