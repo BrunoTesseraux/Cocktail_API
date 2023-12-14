@@ -5,6 +5,7 @@ import {
   VodkaContext,
   RumContext,
   AlcFreeContext,
+  FavListContext,
 } from "../Context/Context";
 import { useParams } from "react-router-dom";
 import "./CocktailList.scss";
@@ -17,6 +18,8 @@ const CocktailList = () => {
   const ginCocktailContext = useContext(GinContext);
   const vodkaCocktailContext = useContext(VodkaContext);
   const rumCocktailContext = useContext(RumContext);
+
+
 
   // =============================== Styles begin =========================================================
   // useEffect(() => {
@@ -80,7 +83,6 @@ const CocktailList = () => {
     } else if (cocktailIngredient.name === "vodka") {
       return (
         <section>
-          {/* <button onClick={style()}></button> */}
           {vodkaCocktailContext.vodkaCocktailsList.map((cockArray, index) => (
             <div key={index} className="wrapper">
               {cockArray.map((cock, subIndex) => (

@@ -1,4 +1,6 @@
+import { useContext, useEffect, useState } from "react";
 import "./CocktailDetails.scss";
+import { FavListContext } from "../Context/Context";
 
 const CocktailDetails = ({
   name,
@@ -14,7 +16,19 @@ const CocktailDetails = ({
   measure3,
   measure4,
   measure5,
+  cocktail
 }) => {
+
+  // local storage update
+  const favListContext = useContext(FavListContext);
+  // console.log("Detail", favListContext);
+
+  const addFavoriteCocktail = () =>
+  {
+    favListContext.setNewCocktail(cocktail);
+    console.log(favListContext.newCocktail);
+  }
+
   return (
     <>
       <div className="card">
@@ -44,6 +58,7 @@ const CocktailDetails = ({
           </p>
           <p>{beschreibung}</p>
         </div>
+        <button onClick={addFavoriteCocktail}>LIKE</button>
       </div>
     </>
   );

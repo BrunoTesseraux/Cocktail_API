@@ -4,6 +4,7 @@ import CocktailListItem from "../CocktailListItem/CocktailListItem";
 import "./SearchResultList.scss";
 
 const SearchResultList = () => {
+
   const [cocktailFetch, setCocktailFetch] = useState([]);
   const keyword = useParams();
   const cocktailNameValue = keyword.name;

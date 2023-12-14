@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+
+import { useContext, useEffect, useState } from "react";
+
 import CocktailDetails from "../CocktailDetails/CocktailDetails";
 import "./CocktailListItem.scss";
+import { FavListContext } from "../Context/Context";
 
 const CocktailListItem = ({ id, name, img }) => {
   const [cocktail, setCocktail] = useState([]);
@@ -17,6 +20,7 @@ const CocktailListItem = ({ id, name, img }) => {
   };
 
   return (
+
     <div>
       {isPopupVisible && (
         <div className="overlay" onClick={popupFunction}></div>
