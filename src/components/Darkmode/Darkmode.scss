@@ -10,10 +10,7 @@
 }
 .light-mode {
   background-color: rgb(194, 210, 214);
-  .searchbar {
-    border: 2px solid blue;
-  }
-  article {
-    background: linear-gradient(-135deg, #fec20b, #fedab7);
-  }
+}
+article {
+  background: linear-gradient(-135deg, #fec20b, #fedab7);
 }
