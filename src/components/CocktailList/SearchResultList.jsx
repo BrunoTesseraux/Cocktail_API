@@ -34,12 +34,13 @@ const SearchResultList = () => {
         style()
     }, [cocktailFetch])
   // =================================== styles end =========================================================
-
+  console.log(cocktailFetch[0]?.drinks);
     useEffect(() => {
             fetch(`https://thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailNameValue}`)
                 .then(response => response.json())
                 .then(data => setCocktailFetch([data]))
-                .catch(error => console.log("error: ", error))
+
+                .catch(error => console.log("error: request not found", error))
     }, [cocktailNameValue]) 
 
     return (cocktailFetch[0]?.drinks < 1 ? <p>Ich habe leider den Cocktail {cocktailNameValue} NOCH nicht getrunken aber jetzt ist kommt es in meine To-Do-list <input type="text" name="" id="" placeholder="Erähl mir was zum Cocktail"/><button>Nachrich Senden</button></p> :  (<section className="wrapper">
