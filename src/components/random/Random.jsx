@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CocktailDetails from "../CocktailDetails/CocktailDetails";
+import "./Random.scss"
 
 const Random = ({ id, name, img }) => {
 
@@ -7,18 +8,17 @@ const Random = ({ id, name, img }) => {
 
   // When the user clicks on div, open the popup
   const popupFunction = () => {
-    fetch(`www.thecocktaildb.com/api/json/v1/1/random.php`)
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
       .then((response) => response.json())
       .then((data) => setRandom([...random, data.drinks[0]]));
 
-    let popup = document.getElementById(id);
-    // popup.textContent = `POPOPOPOPUP`;
+    let popup = document.getElementById("randombutton");
     popup.classList.toggle("show");
   };
 
   return (
-    <button onClick={popupFunction} key={id} className="polaroid popup">Random Cocktail
-      <span className="popuptext" id={id}>
+    <button onClick={popupFunction}  className="popup randombutton">Random Cocktail
+      <span className="popuptext" id="randombutton">
         <CocktailDetails
           name={random[0]?.strDrink}
           img={random[0]?.strDrinkThumb}

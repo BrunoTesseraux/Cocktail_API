@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./Home.scss";
 import { useContext, useState } from "react";
 import { AllIngredientsContext } from "../components/Context/Context";
+import Random from "../components/random/Random";
 const Home = () => {
   const allIngredientsContext = useContext(AllIngredientsContext);
   const allIngredientsState = allIngredientsContext.allIngredients[0];
@@ -62,13 +63,9 @@ const Home = () => {
         ))}
       </div>
 
-      {/* Alkoholfrei */}
-      {/* <FetchAlcFreeList />
-      <Link to="/alcfree">zur Alkoholfrei Liste</Link> */}
+     
 
-      {/* Random */}
-      {/* <FetchRandomList />
-      <Link to="/random">zur Random Liste</Link> */}
+      <Random/>
     </section>
   );
 };
