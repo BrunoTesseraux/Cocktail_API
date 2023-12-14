@@ -1,14 +1,22 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Searchbar.scss";
 
 const Searchbar = () => {
-
   const [cocktailName, setCocktailName] = useState("");
 
-  return <>
-      <input onClick={(event) => setCocktailName("")} onChange={(event) => setCocktailName(event.target.value)} type="text" placeholder="Search cocktail by name" value={cocktailName}/>
+  return (
+    <div className="searchbar">
+      <input
+        onClick={(event) => setCocktailName("")}
+        onChange={(event) => setCocktailName(event.target.value)}
+        type="text"
+        placeholder="Search cocktail by name"
+        value={cocktailName}
+      />
       <Link to={`/${cocktailName}`}>Search</Link>
-    </>;
+    </div>
+  );
 };
 
 export default Searchbar;
