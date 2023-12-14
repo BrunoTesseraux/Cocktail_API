@@ -7,13 +7,17 @@ import "./Header.scss";
 const Header = () => {
   return (
     <header>
-      <h1>Mixology 101</h1>
+      <h1>Bärbels Mixstube</h1>
       <div>
-        <Link to="/">
-          <img className="logo" src="./logo.png" alt="" />
-        </Link>
-        <Link to="/favorites">My Favorits</Link>
+        <div className="logo_favorite">
+          <Link to="/">
+            <img className="logo" src="./logo.png" alt="" />
+          </Link>
+          <Link to="/favorites">My Favorits</Link>
+        </div>
+        <div className="searchbar_container">
         <Searchbar />
+        </div>
         <Darkmode />
       </div>
     </header>

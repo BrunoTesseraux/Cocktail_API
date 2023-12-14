@@ -5,6 +5,7 @@ header {
   height: 100px;
   z-index: 9999;
   background-color: rgba(0, 0, 0, 0.231);
+  
   h1 {
     text-align: center;
   }
@@ -22,4 +23,14 @@ header {
       top: -35px;
     }
   }
+  .logo_favorite
+  {
+    width: 250px;
+  }
+  .searchbar_container
+  {
+    transform: translateX(-70px);
+  }
+
+  
 }
