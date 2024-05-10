@@ -1,5 +1,5 @@
 import Home from "../../page/Home";
-import Darkmode from "../darkmode/Darkmode";
+import Darkmode from "../Darkmode/Darkmode";
 import Searchbar from "../Searchbar/Searchbar";
 import { Link } from "react-router-dom";
 import "./Header.scss";

@@ -1,5 +1,5 @@
-import "./DarkMode.css";
-import "./DarkMode.scss";
+import "./Darkmode.css";
+import "./Darkmode.scss";
 const DarkMode = () => {
   const styleTarget = document.body;
 
